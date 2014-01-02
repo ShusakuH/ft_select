@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_select.c                                        :+:      :+:    :+:   */
+/*   ft_signal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/02 12:36:50 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 20:41:45 by greyrol          ###   ########.fr       */
+/*   Created: 2014/01/02 19:53:24 by greyrol           #+#    #+#             */
+/*   Updated: 2014/01/02 20:27:20 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <signal.h>
 #include <libft_printf.h>
-#include <stdlib.h>
 #include "ft_select.h"
 
-int main(int argc, char *argv[])
+void	ft_signal(void)
 {
-	t_term	*term;
+	signal(SIGTERM, &ft_signal_kill);
+	signal(SIGKILL, &ft_signal_kill);
+	signal(SIGINT, &ft_signal_kill);
+	signal(SIGWINCH, &ft_signal_write);
+}
 
-	term = (t_term *)malloc(sizeof(t_term));
-	ft_init_terminal_data(term);
-	ft_terminal_raw_mode();
-	if (argc > 1)
-		ft_terminal_parse_args(term, argv);
-	ft_lst_print(term->arg_list);
-	ft_signal();
-	ft_terminal_run(term);
-	free(term);
-	return (0);
+void	ft_signal_kill(int sigint)
+{
+	(void)sigint;
+	ft_write_clear();
+	ft_terminal_exit(EXIT_FAILURE);
+}
+
+void	ft_signal_write(int sigint)
+{
+	if (sigint != SIGWINCH)
+		return ;
+	ft_printf("Window size changed\n");
 }
