@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 14:23:04 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/02 14:38:14 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 #include <curses.h>
 #include <term.h>
 
-int		ft_init_terminal_data(void)
+int		ft_init_terminal_data(char **term_buffer)
 {
 	int		t_result;
-	char	*term_buffer;
 	char	*term_type;
 
-	term_buffer = NULL;
 	term_type = getenv("TERM");
 	if (!term_type)
 		ft_error("ft_select: error: You must specified terminal type\n");
-	t_result = tgetent(term_buffer, term_type);
+	t_result = tgetent(*term_buffer, term_type);
 	if (t_result < 0)
 		ft_error("ft_select: error: Cannot access the termcap database\n");
 	else if (t_result == 0)
@@ -35,7 +33,10 @@ int		ft_init_terminal_data(void)
 
 char	*ft_ask_terminal_string(char *name, char **term_buffer)
 {
+	char	*return_str;
 	
+	return_str = tgetstr(name, term_buffer);
+	return (return_str);	
 }
 
 int 	ft_ask_terminal_numeric(char *name)
