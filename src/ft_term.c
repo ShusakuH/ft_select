@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 16:32:55 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/02 17:09:53 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <termios.h>
 #include "ft_select.h"
 
-int		ft_init_terminal_data(char **term_buffer)
+int		ft_init_terminal_data(t_term *term)
 {
 	int		t_result;
 	char	*term_type;
@@ -27,16 +27,19 @@ int		ft_init_terminal_data(char **term_buffer)
 	if (!term_type)
 		ft_terminal_error("ft_select: error: You must specified\
 							terminal type\n");
-	t_result = tgetent(*term_buffer, term_type);
+	t_result = tgetent(term->term_buffer, term_type);
 	if (t_result < 0)
 		ft_terminal_error("ft_select: error: Cannot access the termcap\
 							database\n");
 	else if (t_result == 0)
 		ft_terminal_error("ft_select: error: Terminal type is not defined\n");
+	term->arg_list = NULL;
+	term->max_cols = tgetnum("col");
+	term->max_rows = tgetnum("li");
 	return (EXIT_SUCCESS);
 }
 
-void	ft_terminal_row_mode(void)
+void	ft_terminal_raw_mode(void)
 {
 	struct termios	termios;
 
@@ -47,15 +50,17 @@ void	ft_terminal_row_mode(void)
 	tcsetattr(STDIN_FILENO, 0, &termios);
 }
 
-void	ft_terminal_parse_args(char *argv[], char **env)
+void	ft_terminal_parse_args(t_term *term, char *argv[])
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i] != '\0')
 	{
-		
+		ft_lst_add_element(&term->arg_list, argv[i]);
+		i++;
 	}
+	term->arg_count = i;
 }
 
 void	ft_terminal_restore(void)

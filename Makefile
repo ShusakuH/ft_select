@@ -6,7 +6,7 @@
 #    By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/11 05:27:36 by greyrol           #+#    #+#              #
-#    Updated: 2014/01/02 15:14:46 by greyrol          ###   ########.fr        #
+#    Updated: 2014/01/02 17:02:44 by greyrol          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -28,7 +28,7 @@ INC_DIR = inc -I $(LIBOPT_DIR)/inc -I $(LIBFT_DIR)/inc
 SRC_DIR = ./src
 OBJ_DIR = ./obj
 
-UNITS = ft_select.c ft_term.c ft_ask_terminal.c
+UNITS = ft_select.c ft_term.c ft_list.c ft_terminal_error.c
 
 UNITS_O = $(UNITS:.c=.o)
 SRCS = $(patsubst %,$(SRC_DIR)/%,$(UNITS))
