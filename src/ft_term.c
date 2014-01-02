@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 17:09:53 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/02 19:35:15 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int		ft_init_terminal_data(t_term *term)
 							database\n");
 	else if (t_result == 0)
 		ft_terminal_error("ft_select: error: Terminal type is not defined\n");
-	term->arg_list = NULL;
+	term->arg_list = (t_list *)malloc(sizeof(t_list));
+	ft_lst_init(term->arg_list);
 	term->max_cols = tgetnum("col");
 	term->max_rows = tgetnum("li");
 	return (EXIT_SUCCESS);
@@ -57,7 +58,7 @@ void	ft_terminal_parse_args(t_term *term, char *argv[])
 	i = 1;
 	while (argv[i] != '\0')
 	{
-		ft_lst_add_element(&term->arg_list, argv[i]);
+		ft_lst_add_element(term->arg_list, argv[i]);
 		i++;
 	}
 	term->arg_count = i;

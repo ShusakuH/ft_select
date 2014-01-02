@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 16:19:00 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 17:09:38 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/02 19:31:04 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 #include <libft_printf.h>
 #include "ft_select.h"
 
-void	ft_lst_add_element(t_arg **arg, char *argvi)
+void	ft_lst_init(t_list *list)
+{
+	list->first = NULL;
+	list->last = NULL;
+}
+
+void	ft_lst_add_element(t_list *list, char *argvi)
 {
 	t_arg	*element;
 	
@@ -24,15 +30,20 @@ void	ft_lst_add_element(t_arg **arg, char *argvi)
 		return ;
 	element->content = argvi;
 	element->content_size = ft_strlen(argvi);
-	element->next = *arg;
-	*arg = element;
+	element->prev = list->last;
+	element->next = NULL;
+	if (list->last)
+		list->last->next = element;
+	else
+		list->first = element;
+	list->last = element;
 }
 
-void	ft_lst_print(t_arg *arg)
+void	ft_lst_print(t_list *list)
 {
 	t_arg	*element;
 
-	element = arg;
+	element = list->first;
 	while (element)
 	{
 		ft_printf("arg : %s\n", element->content);
