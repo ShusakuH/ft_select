@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 16:19:00 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 20:27:51 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 14:36:39 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lst_init(t_list *list)
 void	ft_lst_add_element(t_list *list, char *argvi)
 {
 	t_arg	*element;
-	
+
 	element = (t_arg *)malloc(sizeof(t_arg));
 	if (!element)
 		return ;

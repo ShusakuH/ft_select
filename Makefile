@@ -6,7 +6,7 @@
 #    By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/11 05:27:36 by greyrol           #+#    #+#              #
-#    Updated: 2014/01/02 20:43:32 by greyrol          ###   ########.fr        #
+#    Updated: 2014/01/03 20:02:46 by greyrol          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -29,7 +29,7 @@ SRC_DIR = ./src
 OBJ_DIR = ./obj
 
 UNITS = ft_select.c ft_terminal.c ft_list.c ft_terminal_error.c ft_signal.c\
-		ft_write.c ft_terminal_run.c
+		ft_write.c ft_terminal_run.c ft_move.c ft_capabilities.c
 
 UNITS_O = $(UNITS:.c=.o)
 SRCS = $(patsubst %,$(SRC_DIR)/%,$(UNITS))

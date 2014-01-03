@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_term.c                                          :+:      :+:    :+:   */
+/*   ft_terminal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 20:43:00 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 18:46:14 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,18 @@ int		ft_init_terminal_data(t_term *term)
 	int		t_result;
 	char	*term_type;
 
-	term_type = getenv("TERM");
+	term_type = getenv(FT_TERM);
 	if (!term_type)
-		ft_terminal_error("ft_select: error: You must specified\
-							terminal type\n");
+		ft_terminal_error(FT_TERMT_ERROR);
 	t_result = tgetent(term->term_buffer, term_type);
 	if (t_result < 0)
-		ft_terminal_error("ft_select: error: Cannot access the termcap\
-							database\n");
+		ft_terminal_error(FT_TERMC_ERROR);
 	else if (t_result == 0)
-		ft_terminal_error("ft_select: error: Terminal type is not defined\n");
+		ft_terminal_error(FT_TERMI_ERROR);
 	term->arg_list = (t_list *)malloc(sizeof(t_list));
 	ft_lst_init(term->arg_list);
-	term->max_cols = tgetnum("col");
-	term->max_rows = tgetnum("li");
+	term->max_cols = tgetnum(TC_COLUM);
+	term->max_rows = tgetnum(TC_LINES);
 	return (EXIT_SUCCESS);
 }
 

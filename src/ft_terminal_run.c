@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/02 21:12:50 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 20:37:43 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 void	ft_terminal_run(t_term *term)
 {
-	char	buff[5];
+	t_arg	*elem;
+	int	key;
 
-	ft_write_args(term);
-	ft_move_to(term, /*pos-x, pos-y*/);
+	elem = term->arg_list->first;
+	ft_write(term);
+	ft_move_to(term, elem->position->x, elem->position->y);
 	while (42)
 	{
-		read(STDIN_FILENO, buff, 5);
+		key = 0;
+		read(STDIN_FILENO, &key, 4);
+		if (term->status)
+			ft_check_keys(term, key);
 	}
 }
 
