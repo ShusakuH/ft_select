@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 20:37:43 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 21:11:37 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_terminal_run(t_term *term)
 	{
 		key = 0;
 		read(STDIN_FILENO, &key, 4);
-		if (term->status)
-			ft_check_keys(term, key);
+		/*if (term->status)
+			ft_check_keys(term, key);*/
 	}
 }
 

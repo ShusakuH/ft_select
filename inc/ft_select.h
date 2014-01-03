@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 20:37:47 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 21:11:46 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	ft_move(t_term *term, int x, int y);
 void	ft_move_to(t_term *term, int x, int y);
 void	ft_move_current(t_term *term);
 
-void	ft_check_keys(t_term *term, int key);
+/*void	ft_check_keys(t_term *term, int key);*/
 
 char	*ft_s_underline(t_bool selected);
 char	*ft_e_underline(t_bool selected);

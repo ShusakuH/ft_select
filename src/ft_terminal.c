@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 18:46:14 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 21:22:39 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int		ft_init_terminal_data(t_term *term)
 	ft_lst_init(term->arg_list);
 	term->max_cols = tgetnum(TC_COLUM);
 	term->max_rows = tgetnum(TC_LINES);
+	term->cursor->x = 0;
+	term->cursor->y = 0;
 	return (EXIT_SUCCESS);
 }
 
