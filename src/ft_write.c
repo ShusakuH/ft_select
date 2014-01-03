@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:28:01 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 21:18:54 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/03 22:29:18 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ void	ft_write_args(t_term *term)
 void	ft_write_arg(t_term *term, t_arg *arg)
 {
 	ft_move_to(term, arg->position->x, arg->position->y);
-	ft_printf(FT_CELL_MASK, ft_s_underline(arg->selected),
-							ft_s_inverse(arg->selected),
-							arg->content,
-							ft_e_inverse(arg->selected),
-							ft_e_underline(arg->selected));
+	ft_fprintf(0, FT_CELL_MASK, ft_s_underline(arg->selected),
+								ft_s_inverse(arg->selected),
+								arg->content,
+								ft_e_inverse(arg->selected),
+								ft_e_underline(arg->selected));
 }
 
 void	ft_write_prepare(t_term *term)
@@ -103,7 +103,7 @@ void	ft_write_prepare(t_term *term)
 
 int		ft_write_null(int nb)
 {
-	return (ft_putnbr_fd(nb, STDERR_FILENO));
+	return (write(STDERR_FILENO, &nb, 1));
 }
 
 void	ft_write_clear(void)
