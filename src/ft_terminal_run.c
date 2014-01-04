@@ -27,6 +27,10 @@ void	ft_terminal_run(t_term *term)
 		read(STDIN_FILENO, &key, 4);
 		if (term->status)
 			ft_check_keys(term, key);
+		else if (key == FT_KEY_ESCAPE && !term->status)
+			ft_key_quit(term);
+		else
+			ft_key_return(term);
 	}
 }
 
