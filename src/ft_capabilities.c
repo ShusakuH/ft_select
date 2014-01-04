@@ -16,45 +16,33 @@
 
 char	*ft_s_underline(t_bool selected)
 {
-	char	*buff;
-
-	buff = tgetstr(TC_S_UNDERLINE, NULL);
 	if (!selected)
 		return ("");
 	else
-		return (buff);
+		return (tgetstr(TC_S_UNDERLINE, NULL));
 }
 
 char	*ft_e_underline(t_bool selected)
 {
-	char	*buff;
-
-	buff = tgetstr(TC_E_UNDERLINE, NULL);
 	if (!selected)
 		return ("");
 	else
-		return (buff);
+		return (tgetstr(TC_E_UNDERLINE, NULL));
 }
 
 char	*ft_s_inverse(t_bool selected)
 {
-	char	*buff;
-
-	buff = tgetstr(TC_S_INVERSE, NULL);
 	if (!selected)
 		return ("");
 	else
-		return (buff);
+		return (tgetstr(TC_S_INVERSE, NULL));
 }
 
 char 	*ft_e_inverse(t_bool selected)
 {
-	char	*buff;
-
-	buff = tgetstr(TC_E_INVERSE, NULL);
 	if (!selected)
 		return ("");
 	else
-		return (buff);
+		return (tgetstr(TC_E_INVERSE, NULL));
 }
 

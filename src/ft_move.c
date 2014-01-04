@@ -31,12 +31,12 @@ void	ft_move_current(t_term *term)
 	t_arg	*elem;
 
 	elem = (t_arg *)malloc(sizeof(t_arg));
-	if (!term->current_arg)
+	if (!term->cur_arg)
 	{
 		if (!elem)
 			return ;
-		term->current_arg = term->arg_list->first;
+		term->cur_arg = term->arg_list->first;
 	}
-	elem = term->current_arg;
+	elem = term->cur_arg;
 	ft_move_to(term, elem->position->x, elem->position->y);
 }

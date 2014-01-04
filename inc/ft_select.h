@@ -72,7 +72,7 @@ typedef struct	s_term
 	int			rows;
 	t_list		*arg_list;
 	int			arg_count;
-	t_arg		*current_arg;
+	t_arg		*cur_arg;
 	int			cell_len;
 	int			col;
 	int			row;

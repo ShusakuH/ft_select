@@ -27,9 +27,9 @@ void	ft_write(t_term *term)
 	if (term->max_rows > term->row)
 	{
 		ft_write_args(term);
-		if (!term->current_arg)
-			term->current_arg = term->arg_list->first;
-		elem = term->current_arg;
+		if (!term->cur_arg)
+			term->cur_arg = term->arg_list->first;
+		elem = term->cur_arg;
 		ft_move_to(term, elem->position->x, elem->position->y);
 		term->status = TRUE;
 	}
@@ -69,11 +69,13 @@ void	ft_write_args(t_term *term)
 void	ft_write_arg(t_term *term, t_arg *arg)
 {
 	ft_move_to(term, arg->position->x, arg->position->y);
-	ft_fprintf(0, FT_CELL_MASK, ft_s_underline(arg->selected),
-								ft_s_inverse(arg->selected),
-								arg->content,
-								ft_e_inverse(arg->selected),
-								ft_e_underline(arg->selected));
+	tputs(ft_s_underline(term->cur_arg->content == arg->content), 0,
+							&ft_write_null);
+	tputs(ft_s_inverse(arg->selected), 0, &ft_write_null);
+	ft_fprintf(0, "%s", arg->content);
+	tputs(ft_e_inverse(arg->selected), 0, &ft_write_null);
+	tputs(ft_e_underline(term->cur_arg->content == arg->content), 0,
+							&ft_write_null);
 }
 
 void	ft_write_prepare(t_term *term)

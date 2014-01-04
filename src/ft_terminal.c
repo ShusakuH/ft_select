@@ -62,6 +62,7 @@ void	ft_terminal_parse_args(t_term *term, char *argv[])
 		i++;
 	}
 	term->arg_count = i;
+	term->cur_arg = term->arg_list->first;
 }
 
 void	ft_terminal_restore(void)
