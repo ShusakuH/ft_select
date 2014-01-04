@@ -38,3 +38,13 @@ void	ft_signal_write(int sigint)
 		return ;
 	ft_write(term);
 }
+
+/*
+** 	void	stp_catch(int a)
+** 	{
+** 		char cp[2] = {g_dat->c_cc[VSUSP], 0};
+** 		printf("Stopping...\n");
+** 		signal(SIGTSTP, SIG_DFL);
+** 		ioctl(0, TIOCSTI, cp);
+** 	}
+*/
