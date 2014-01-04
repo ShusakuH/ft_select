@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include "ft_select.h"
 
+t_term	*term;
+
 int main(int argc, char *argv[])
 {
-	t_term	*term;
-
 	term = (t_term *)malloc(sizeof(t_term));
 	term->cursor = (t_cursor *)malloc(sizeof(t_cursor));
 	ft_init_terminal_data(term);

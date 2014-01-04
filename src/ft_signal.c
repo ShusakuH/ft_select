@@ -15,6 +15,8 @@
 #include <libft_printf.h>
 #include "ft_select.h"
 
+extern t_term *term;
+
 void	ft_signal(void)
 {
 	signal(SIGTERM, &ft_signal_kill);
@@ -34,5 +36,5 @@ void	ft_signal_write(int sigint)
 {
 	if (sigint != SIGWINCH)
 		return ;
-	ft_printf("Window size changed\n");
+	ft_write(term);
 }
