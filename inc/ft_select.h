@@ -22,7 +22,7 @@
 # define FT_ERROR_DESC "error"
 
 # define FT_WRITE_ERROR "Display area is too small."
-# define FT_TERMT_ERROR "You mus specify the terminal type"
+# define FT_TERMT_ERROR "You must specify the terminal type"
 # define FT_TERMC_ERROR "Cannot access termcap database"
 # define FT_TERMI_ERROR "Terminal type is not defined"
 
@@ -44,6 +44,7 @@
 # define FT_KEY_RETURN ((int) '\n')
 # define FT_KEY_DELETE 2117294875
 # define FT_KEY_BACKSPACE 127
+# define FT_KEY_ESCAPE 27
 
 typedef struct	s_coordinates
 {
@@ -122,6 +123,7 @@ void	ft_key_up(t_term *term);
 void	ft_key_left(t_term *term);
 void	ft_key_right(t_term *term);
 void	ft_key_space(t_term *term);
+void	ft_key_quit(t_term *term);
 
 char	*ft_s_underline(t_bool selected);
 char	*ft_e_underline(t_bool selected);

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_select.h"
+#include <libft_printf.h>
 #include <unistd.h>
 #include <curses.h>
 #include <term.h>
@@ -25,6 +26,7 @@ static	t_key keys[] =
 	{FT_KEY_RETURN, &ft_key_return},
 	{FT_KEY_DELETE, &ft_key_delete},
 	{FT_KEY_BACKSPACE, &ft_key_delete},
+	{FT_KEY_ESCAPE, &ft_key_quit},
 	{0, NULL}
 };
 
@@ -35,7 +37,7 @@ void	ft_check_keys(t_term *term, int key)
 	i = 0;
 	while (keys[i].key)
 	{
-		if (key == keys[i].key)
+		if (key == keys[i].key && term->arg_count > 0)
 		{
 			(*keys[i].fkey)(term);
 			return ;
@@ -94,6 +96,13 @@ void	ft_key_return(t_term *term)
 		}
 		arg = arg->next;
 	}
+	ft_terminal_exit(EXIT_SUCCESS);
+}
+
+void	ft_key_quit(t_term *term)
+{
+	(void)term;
+	ft_write_clear();
 	ft_terminal_exit(EXIT_SUCCESS);
 }
 
