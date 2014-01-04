@@ -108,7 +108,3 @@ int		ft_write_null(int nb)
 	return (write(STDERR_FILENO, &nb, 1));
 }
 
-void	ft_write_clear(void)
-{
-	tputs(tgetstr(TC_CLEAR, NULL), 1, &ft_write_null);
-}

@@ -29,7 +29,8 @@ SRC_DIR = ./src
 OBJ_DIR = ./obj
 
 UNITS = ft_select.c ft_terminal.c ft_list.c ft_terminal_error.c ft_signal.c\
-		ft_write.c ft_terminal_run.c ft_move.c ft_capabilities.c
+		ft_write.c ft_terminal_run.c ft_move.c ft_capabilities.c\
+		ft_base_keys.c ft_keys.c
 
 UNITS_O = $(UNITS:.c=.o)
 SRCS = $(patsubst %,$(SRC_DIR)/%,$(UNITS))

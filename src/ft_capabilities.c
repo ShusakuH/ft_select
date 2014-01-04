@@ -46,3 +46,8 @@ char 	*ft_e_inverse(t_bool selected)
 		return (tgetstr(TC_E_INVERSE, NULL));
 }
 
+void	ft_write_clear(void)
+{
+	tputs(tgetstr(TC_CLEAR, NULL), 1, &ft_write_null);
+}
+

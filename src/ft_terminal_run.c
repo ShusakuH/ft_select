@@ -25,8 +25,8 @@ void	ft_terminal_run(t_term *term)
 	{
 		key = 0;
 		read(STDIN_FILENO, &key, 4);
-		/*if (term->status)
-			ft_check_keys(term, key);*/
+		if (term->status)
+			ft_check_keys(term, key);
 	}
 }
 
