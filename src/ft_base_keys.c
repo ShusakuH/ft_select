@@ -14,19 +14,23 @@
 
 void	ft_key_down(t_term *term)
 {
+	t_arg	*list;
 	t_arg	*new;
 	t_arg	*old;
 	int		i;
 
 	old = term->cur_arg;
-	if (old)
+	list = term->cur_arg;
+	if (list)
 	{
 		i = 0;
-		while (old->next && i++ < term->col)
-			old = old->next;
+		while (list->next && i++ < term->col)
+			list = list->next;
 	}
-	term->cur_arg = term->arg_list->first;
-	new = term->cur_arg;
+	else
+		list = term->arg_list->first;
+	term->cur_arg = list;
+	new = list;
 	ft_write_arg(term, old);
 	ft_write_arg(term, new);
 	ft_move_to(term, new->position->x, new->position->y);
@@ -34,19 +38,23 @@ void	ft_key_down(t_term *term)
 
 void	ft_key_up(t_term *term)
 {
+	t_arg	*list;
 	t_arg	*new;
 	t_arg	*old;
 	int		i;
 
 	old = term->cur_arg;
-	if (old)
+	list = term->cur_arg;
+	if (list)
 	{
 		i = 0;
-		while (old->prev && i++ < term->col)
-			old = old->prev;
+		while (list->prev && i++ < term->col)
+			list = list->prev;
 	}
-	term->cur_arg = term->arg_list->first;
-	new = term->cur_arg;
+	else
+		list = term->arg_list->first;
+	term->cur_arg = list;
+	new = list;
 	ft_write_arg(term, old);
 	ft_write_arg(term, new);
 	ft_move_to(term, new->position->x, new->position->y);
