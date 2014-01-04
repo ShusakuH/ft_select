@@ -38,5 +38,6 @@ void	ft_move_current(t_term *term)
 		term->cur_arg = term->arg_list->first;
 	}
 	elem = term->cur_arg;
-	ft_move_to(term, elem->position->x, elem->position->y);
+	if (elem)
+		ft_move_to(term, elem->position->x, elem->position->y);
 }

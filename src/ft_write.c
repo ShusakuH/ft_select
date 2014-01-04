@@ -30,7 +30,8 @@ void	ft_write(t_term *term)
 		if (!term->cur_arg)
 			term->cur_arg = term->arg_list->first;
 		elem = term->cur_arg;
-		ft_move_to(term, elem->position->x, elem->position->y);
+		if (elem)
+			ft_move_to(term, elem->position->x, elem->position->y);
 		term->status = TRUE;
 	}
 	else
