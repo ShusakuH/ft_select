@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 14:48:46 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 18:28:23 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	ft_write_arg(t_term *term, t_arg *arg);
 void	ft_write_prepare(t_term *term);
 int		ft_write_null(int nb);
 void	ft_write_clear(void);
+void	ft_write_search(t_term *term);
 
 void	ft_move(t_term *term, int x, int y);
 void	ft_move_to(t_term *term, int x, int y);
