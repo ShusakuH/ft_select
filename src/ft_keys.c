@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:02:29 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 13:15:28 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	ft_key_return(t_term *term)
 		{
 			if (!first)
 				write(STDOUT_FILENO, &separator, 1);
-			first = TRUE;
+			first = FALSE;
 			write(STDOUT_FILENO, arg->content, arg->content_size);
 		}
 		arg = arg->next;
