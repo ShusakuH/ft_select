@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 18:28:23 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 20:46:36 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # define FT_NAME "ft_select"
 # define FT_TERM "TERM"
+# define FT_SEARCH "Recherche : "
 # define FT_ERROR_MASK "%s: %s: %s\n"
 # define FT_ERROR_DESC "error"
 
