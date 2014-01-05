@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 19:53:24 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 14:30:37 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 20:55:04 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <curses.h>
 #include <term.h>
 
-extern t_term *term;
+extern t_term *g_term;
 
 void	ft_signal(void)
 {
@@ -40,14 +40,14 @@ void	ft_signal_write(int sigint)
 {
 	if (sigint != SIGWINCH)
 		return ;
-	ft_write(term);
+	ft_write(g_term);
 }
 
 void	ft_signal_cont(int sigint)
 {
 	if (sigint != SIGCONT)
 		return ;
-	tcsetattr(0, TCSADRAIN, &term->termios);
-	ft_write(term);
+	tcsetattr(0, TCSADRAIN, &g_term->termios);
+	ft_write(g_term);
 }
 
