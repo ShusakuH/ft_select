@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:23:08 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/01 22:31:35 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:54:07 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	push_back(t_list **lst, t_list *elem)
 		last->next = elem;
 }
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*p_cur;
 	t_list	*p_dup;

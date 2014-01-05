@@ -6,13 +6,13 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 20:45:45 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/01 20:45:47 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:57:45 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	 ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
 	while (s && *s)
 		f(s++);

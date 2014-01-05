@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:47:08 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:44:28 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 
 int		ft_init_terminal_data(t_term *term)
 {
-	int		t_result;
+	int		t_res;
 	char	*term_type;
 
 	term_type = getenv(FT_TERM);
 	if (!term_type)
 		ft_terminal_error(FT_TERMT_ERROR);
-	t_result = tgetent(term->term_buffer, term_type);
-	if (t_result < 0)
+	t_res = tgetent(term->term_buffer, term_type);
+	if (t_res < 0)
 		ft_terminal_error(FT_TERMC_ERROR);
-	else if (t_result == 0)
+	else if (t_res == 0)
 		ft_terminal_error(FT_TERMI_ERROR);
 	term->arg_list = (t_list *)malloc(sizeof(t_list));
 	ft_lst_init(term->arg_list);
@@ -81,5 +81,4 @@ void	ft_terminal_exit(int status)
 	ft_terminal_restore();
 	exit(status);
 }
-
 

@@ -6,18 +6,18 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 21:30:15 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 15:57:53 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:56:42 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char const *str)
+int		ft_putstr(char const *str)
 {
 	return (ft_putstr_fd(str, 1));
 }
 
-int	ft_putstr_u(const unsigned char *s)
+int		ft_putstr_u(const unsigned char *s)
 {
 	return (ft_putstr_fd((char *) s, 1));
 }

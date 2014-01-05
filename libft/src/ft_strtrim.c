@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 21:27:03 by greyrol           #+#    #+#             */
-/*   Updated: 2013/11/30 15:11:41 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 15:00:45 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ char	*ft_strrtrim(char *str, char const *separators)
 
 char	*ft_strtrim(char const *s)
 {
-	char				*ret;
-	char const			seps[] = " \n\t";
-	size_t				len;
+	char					*ret;
+	const	char			seps[] = " \n\t";
+	size_t					len;
 
 	len = ft_strlen(s);
 	if (!len)

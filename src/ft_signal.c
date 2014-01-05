@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 19:53:24 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:50:31 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:30:37 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,3 @@ void	ft_signal_cont(int sigint)
 	ft_write(term);
 }
 
-/*
-** 	void	stp_catch(int a)
-** 	{
-** 		char cp[2] = {g_dat->c_cc[VSUSP], 0};
-** 		printf("Stopping...\n");
-** 		signal(SIGTSTP, SIG_DFL);
-** 		ioctl(0, TIOCSTI, cp);
-** 	}
-*/

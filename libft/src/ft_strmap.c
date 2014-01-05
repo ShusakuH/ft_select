@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 20:52:37 by greyrol           #+#    #+#             */
-/*   Updated: 2013/11/28 02:28:46 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:58:08 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmap(char const *str, char (*f)(char))
 	while (id < len)
 	{
 		ret[id] = f(ret[id]);
-		id ++;
+		id++;
 	}
 	return (ret);
 }

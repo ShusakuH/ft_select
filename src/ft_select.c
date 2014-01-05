@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:36:50 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:49:07 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:39:49 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 t_term	*term;
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	term = (t_term *)malloc(sizeof(t_term));
 	term->cursor = (t_cursor *)malloc(sizeof(t_cursor));

@@ -6,13 +6,13 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 20:45:01 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/01 21:20:08 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:59:25 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_words(char const *s, char sep)
+size_t			ft_count_words(char const *s, char sep)
 {
 	size_t		ret;
 
@@ -28,28 +28,28 @@ size_t	ft_count_words(char const *s, char sep)
 	return (ret);
 }
 
-size_t	ft_strlen_ptr(char const *start, char const *end)
+size_t			ft_strlen_ptr(char const *start, char const *end)
 {
 	if (!end)
 		return (ft_strlen(start));
 	return (((unsigned char *) end - (unsigned char *) start));
 }
 
-static	char *trim_chars(char *ptr, char c)
+static	char	*trim_chars(char *ptr, char c)
 {
 	while (ptr && *ptr == c)
 		ptr++;
 	return (ptr);
 }
 
-static	char *trim_word(char *ptr, char c)
+static	char	*trim_word(char *ptr, char c)
 {
 	while (ptr && (*ptr != c) && *ptr)
 		ptr++;
 	return (ptr);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	*ptr;
 	char	*orig;

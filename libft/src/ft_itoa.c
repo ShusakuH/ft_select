@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:30:49 by greyrol           #+#    #+#             */
-/*   Updated: 2013/11/30 13:29:21 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:53:23 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_nbr_size(int dig)
 	temp = dig;
 	ret = 0;
 	if (dig < 0 || !dig)
-		ret ++;
+		ret++;
 	while (temp)
 	{
 		ret++;

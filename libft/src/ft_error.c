@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 10:46:17 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 15:33:54 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:51:44 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_error(const char *fmt, ...)
 	int			return_i;
 
 	va_start(args, fmt);
-	return_i = ft_parse(2, (char *) fmt, args);
+	return_i = ft_parse(2, (char *)fmt, args);
 	va_end(args);
 	return (return_i);
 }

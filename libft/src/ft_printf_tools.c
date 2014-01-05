@@ -6,14 +6,14 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/29 14:43:53 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 16:05:40 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:56:24 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 #include "libft_converters.h"
 
-int	get_flag_precision(char *format, t_flag *flag, int index)
+int		get_flag_precision(char *format, t_flag *flag, int index)
 {
 	int	len;
 
@@ -23,7 +23,7 @@ int	get_flag_precision(char *format, t_flag *flag, int index)
 	return (len);
 }
 
-int	get_flag_length(char *format, t_flag *flag, int index)
+int		get_flag_length(char *format, t_flag *flag, int index)
 {
 	int	len;
 
@@ -46,7 +46,7 @@ t_flag*	ft_init_format(int fd, t_flag *flag)
 	return (flag);
 }
 
-int	ft_sub_format(char *format, va_list ap, t_flag *flag, int *i)
+int		ft_sub_format(char *format, va_list ap, t_flag *flag, int *i)
 {
 	int	has_flag;
 	int	(*function[15])(t_flag *flag, va_list ap);
@@ -75,7 +75,7 @@ int	ft_sub_format(char *format, va_list ap, t_flag *flag, int *i)
 	return (has_flag);
 }
 
-int	ft_format(int fd, char *format, va_list ap, int *index)
+int		ft_format(int fd, char *format, va_list ap, int *index)
 {
 	int		i;
 	int		has_flag;
@@ -90,5 +90,4 @@ int	ft_format(int fd, char *format, va_list ap, int *index)
 	free(flag);
 	return (has_flag - i);
 }
-
 

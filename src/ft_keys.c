@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 13:15:28 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:49:39 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_check_keys(t_term *term, int key)
 		{
 			(*keys[i].fkey)(term);
 			return ;
-        }
+		}
 		i++;
 	}
 	ft_key_default(term);
@@ -50,7 +50,7 @@ void	ft_check_keys(t_term *term, int key)
 
 void	ft_key_delete(t_term *term)
 {
-	t_arg *tmp_arg;
+	t_arg	*tmp_arg;
 
 	tmp_arg = term->cur_arg;
 	term->cur_arg = NULL;

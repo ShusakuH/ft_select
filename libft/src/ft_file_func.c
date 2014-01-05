@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 14:06:29 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/26 23:25:14 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 15:02:03 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ DIR			*ft_opendir(char *dirname)
 t_dirent	*ft_readdir(DIR *handle)
 {
 	t_dirent	*ent;
-
 
 	if (!(ent = readdir(handle)))
 		return (NULL);

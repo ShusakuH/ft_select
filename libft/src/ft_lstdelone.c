@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 18:44:58 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/28 10:18:19 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:53:50 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t s))
 {
-	t_list * ptr;
+	t_list	*ptr;
 
 	if (!alst || !*alst)
 		return ;

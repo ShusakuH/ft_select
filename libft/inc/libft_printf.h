@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vfprintf.h                                      :+:      :+:    :+:   */
+/*   libft_printf.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelsch <mwelsch@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 02:15:22 by mwelsch           #+#    #+#             */
-/*   Updated: 2013/12/29 15:47:45 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:35:14 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_PRINTF_H
@@ -30,7 +30,7 @@ typedef struct	s_flag
 	int		blank_spaces;
 	int		length;
 	int		precision;
-}				t_flag;						
+}				t_flag;
 
 int		ft_convert(t_flag *flag, char *type);
 int		ft_print_sign(t_flag *flag, int nb);

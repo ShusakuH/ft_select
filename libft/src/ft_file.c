@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 14:06:29 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 16:50:21 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:52:40 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*ft_search_file_part(t_search_file *file, t_bool print_errors,
 	return (NULL);
 }
 
-char		*ft_path_add(const char *a, const char *b, char **buff)
+char	*ft_path_add(const char *a, const char *b, char **buff)
 {
 	t_bool		sepra;
 	static char	buf[FT_BUF_MAX] = {0};

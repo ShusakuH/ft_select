@@ -6,13 +6,13 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/29 14:51:31 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 15:46:31 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:55:50 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-int	ft_convert(t_flag *flag, char *type)
+int		ft_convert(t_flag *flag, char *type)
 {
 	if (flag->convert)
 	{
@@ -83,7 +83,7 @@ int		print_escaped(int fd, char *str)
 		return (1);
 }
 
-int	ft_parse(int fd, char *format, va_list ap)
+int		ft_parse(int fd, char *format, va_list ap)
 {
 	int	i;
 	int	total_len;

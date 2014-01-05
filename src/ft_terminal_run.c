@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 21:11:37 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:42:37 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_terminal_run(t_term *term)
 {
 	t_arg	*elem;
-	int	key;
+	int		key;
 
 	elem = term->arg_list->first;
 	ft_write(term);

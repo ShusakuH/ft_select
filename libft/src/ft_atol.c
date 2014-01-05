@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 20:22:10 by greyrol           #+#    #+#             */
-/*   Updated: 2013/11/22 18:42:54 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:51:30 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ long		ft_atol(const char *str)
 	ret = 0;
 	if (*str == '-')
 		return (-1 * ft_atol(++str));
-
 	while (str && *str)
 	{
 		if (*str < '0' || *str > '9')
@@ -29,3 +28,4 @@ long		ft_atol(const char *str)
 	}
 	return (ret);
 }
+

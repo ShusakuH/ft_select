@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 18:47:31 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 20:03:07 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:39:32 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_s_inverse(t_bool selected)
 		return (tgetstr(TC_S_INVERSE, NULL));
 }
 
-char 	*ft_e_inverse(t_bool selected)
+char	*ft_e_inverse(t_bool selected)
 {
 	if (!selected)
 		return ("");

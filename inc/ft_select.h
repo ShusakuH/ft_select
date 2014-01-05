@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:52:10 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:48:46 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ typedef struct	s_arg
 	struct s_arg	*prev;
 }				t_arg;
 
-typedef	struct	s_list
+typedef struct	s_list
 {
 	t_arg	*first;
 	t_arg	*last;
 }				t_list;
 
-typedef struct termios t_termios;
+typedef struct	termios	t_termios;
 
 typedef struct	s_term
 {
@@ -95,12 +95,12 @@ typedef struct	s_term
 	t_termios	termios;
 }				t_term;
 
-typedef void	(*fkey)(t_term *);
+typedef void	(*t_fkey)(t_term *);
 
 typedef struct	s_key
 {
 	int		key;
-	fkey	fkey;
+	t_fkey	fkey;
 }				t_key;
 
 int		ft_init_terminal_data(t_term *term);

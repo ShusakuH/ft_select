@@ -6,7 +6,7 @@
 /*   By: greyrol <greyrol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/24 02:54:07 by greyrol           #+#    #+#             */
-/*   Updated: 2013/12/29 15:55:32 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 14:55:13 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_putstr_f(t_flag *flag, va_list ap)
 int	ft_putstr_u_f(t_flag *flag, va_list ap)
 {
 	int			spaces;
-	t_uchar	*str;
+	t_uchar		*str;
 	int			len;
 
 	str = va_arg(ap, t_uchar *);
