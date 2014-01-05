@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 21:11:37 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 10:20:46 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	ft_key_delete(t_term *term)
 	if (tmp_arg->next)
 		tmp_arg->next->prev = tmp_arg->prev;
 	tputs(tgetstr(TC_CLEAR, NULL), 1, &ft_write_null);
-	if (!term->arg_count)
-		ft_terminal_exit(EXIT_SUCCESS);
 	if (tmp_arg->next)
 		term->cur_arg = tmp_arg->next;
 	else if (tmp_arg->prev)
@@ -69,6 +67,8 @@ void	ft_key_delete(t_term *term)
 	else
 		term->cur_arg = NULL;
 	term->arg_count--;
+	if (term->arg_count == 1)
+		ft_terminal_exit(EXIT_SUCCESS);
 	free(tmp_arg);
 	ft_move_to(term, 0, 0);
 	ft_write(term);
