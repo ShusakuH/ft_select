@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 12:02:25 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 12:52:10 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_SELECT_H
 
 # include <libft_config.h>
+# include <term.h>
 
 # define FT_NAME "ft_select"
 # define FT_TERM "TERM"
@@ -75,6 +76,8 @@ typedef	struct	s_list
 	t_arg	*last;
 }				t_list;
 
+typedef struct termios t_termios;
+
 typedef struct	s_term
 {
 	t_bool		status;
@@ -89,6 +92,7 @@ typedef struct	s_term
 	int			col;
 	int			row;
 	t_cursor	*cursor;
+	t_termios	termios;
 }				t_term;
 
 typedef void	(*fkey)(t_term *);
@@ -100,7 +104,7 @@ typedef struct	s_key
 }				t_key;
 
 int		ft_init_terminal_data(t_term *term);
-void	ft_terminal_raw_mode(void);
+void	ft_terminal_raw_mode(t_term *term);
 void	ft_terminal_parse_args(t_term *term, char *argv[]);
 void	ft_terminal_exit(int status);
 void	ft_terminal_restore(void);
@@ -137,6 +141,7 @@ char	*ft_e_inverse(t_bool selected);
 void	ft_signal(void);
 void	ft_signal_kill(int sigint);
 void	ft_signal_write(int sigint);
+void	ft_signal_cont(int sigint);
 
 void	ft_lst_init(t_list *list);
 void	ft_lst_add_element(t_list *list, char *argvi);

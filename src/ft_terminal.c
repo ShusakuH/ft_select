@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 11:46:31 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 12:47:08 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_init_terminal_data(t_term *term)
 	return (EXIT_SUCCESS);
 }
 
-void	ft_terminal_raw_mode(void)
+void	ft_terminal_raw_mode(t_term *term)
 {
 	struct termios	termios;
 
@@ -49,6 +49,7 @@ void	ft_terminal_raw_mode(void)
 	termios.c_cc[VMIN] = 1;
 	termios.c_cc[VTIME] = 0;
 	tcsetattr(STDIN_FILENO, 0, &termios);
+	term->termios = termios;
 }
 
 void	ft_terminal_parse_args(t_term *term, char *argv[])
