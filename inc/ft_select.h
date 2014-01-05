@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 11:45:00 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 12:02:25 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define FT_KEY_DOWN 4348699
 # define FT_KEY_SPACE ((int) ' ')
 # define FT_KEY_RETURN ((int) '\n')
+# define FT_KEY_TAB ((int) '\t')
 # define FT_KEY_DELETE 2117294875
 # define FT_KEY_BACKSPACE 127
 # define FT_KEY_ESCAPE 27

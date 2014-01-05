@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:42:28 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 10:20:46 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 12:02:29 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static	t_key keys[] =
 	{FT_KEY_DELETE, &ft_key_delete},
 	{FT_KEY_BACKSPACE, &ft_key_delete},
 	{FT_KEY_ESCAPE, &ft_key_quit},
+	{FT_KEY_TAB, &ft_key_right},
 	{0, NULL}
 };
 
