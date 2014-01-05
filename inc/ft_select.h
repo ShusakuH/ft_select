@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 10:38:06 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 11:45:00 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@
 # define TC_LINES "li"
 # define TC_CURSOR_MOVE "cm"
 # define TC_CURSOR_INVI "vi"
+# define TC_CURSOR_DFL "ve"
 # define TC_S_UNDERLINE "us"
 # define TC_E_UNDERLINE "ue"
 # define TC_S_INVERSE "so"
 # define TC_E_INVERSE "se"
+# define TC_F_COLOR "Sf"
+# define TC_B_COLOR "Sb"
 
 # define FT_KEY_LEFT 4479771
 # define FT_KEY_UP 4283163

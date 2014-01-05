@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 21:22:39 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 11:46:31 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_terminal_restore(void)
 	tcgetattr(STDIN_FILENO, &termios);
 	termios.c_lflag |= (ICANON | ECHO);
 	tcsetattr(STDIN_FILENO, 0, &termios);
+	tputs(tgetstr(TC_CURSOR_DFL, NULL), 0, &ft_write_null);
 }
 
 void	ft_terminal_exit(int status)
