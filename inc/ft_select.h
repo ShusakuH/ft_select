@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:37:06 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 21:11:46 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 10:38:06 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 # define FT_NAME "ft_select"
 # define FT_TERM "TERM"
-# define FT_CELL_MASK "%s%s%s%s%s"
 # define FT_ERROR_MASK "%s: %s: %s\n"
 # define FT_ERROR_DESC "error"
 
@@ -31,6 +30,7 @@
 # define TC_COLUM "col"
 # define TC_LINES "li"
 # define TC_CURSOR_MOVE "cm"
+# define TC_CURSOR_INVI "vi"
 # define TC_S_UNDERLINE "us"
 # define TC_E_UNDERLINE "ue"
 # define TC_S_INVERSE "so"

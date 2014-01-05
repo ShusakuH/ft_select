@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:28:01 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/03 22:29:18 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/05 10:41:52 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	ft_write_args(t_term *term)
 void	ft_write_arg(t_term *term, t_arg *arg)
 {
 	ft_move_to(term, arg->position->x, arg->position->y);
+	tputs(tgetstr(TC_CURSOR_INVI, NULL), 0, &ft_write_null);
 	tputs(ft_s_underline(term->cur_arg->content == arg->content), 0,
 							&ft_write_null);
 	tputs(ft_s_inverse(arg->selected), 0, &ft_write_null);
