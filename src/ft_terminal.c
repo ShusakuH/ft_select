@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 13:47:56 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 14:44:28 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/07 19:55:28 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,19 @@ void	ft_terminal_raw_mode(t_term *term)
 void	ft_terminal_parse_args(t_term *term, char *argv[])
 {
 	int	i;
+	int	empty_str;
 
 	i = 1;
+	empty_str = 0;
 	while (argv[i] != '\0')
 	{
-		ft_lst_add_element(term->arg_list, argv[i]);
+		if (ft_strcmp(argv[i], "") == 0)
+			empty_str++;
+		if (ft_strcmp(argv[i], "") != 0)
+			ft_lst_add_element(term->arg_list, argv[i]);
 		i++;
 	}
-	term->arg_count = i;
+	term->arg_count = i - empty_str;
 	term->cur_arg = term->arg_list->first;
 }
 

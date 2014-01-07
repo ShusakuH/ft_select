@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 12:36:50 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 20:54:04 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/07 19:57:02 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 	if (argc > 1)
 		ft_terminal_parse_args(g_term, argv);
 	ft_signal();
-	if (argc > 1)
+	if (argc > 1 && g_term->arg_count > 1)
 		ft_terminal_run(g_term);
 	free(g_term);
 	return (0);
