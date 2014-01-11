@@ -14,7 +14,7 @@
 #include "ft_select.h"
 #include <unistd.h>
 
-static char	*ft_strjoin_int(char *str, char c)
+/*static char	*ft_strjoin_int(char *str, char c)
 {
 	int		i;
 	size_t	len;
@@ -31,12 +31,12 @@ static char	*ft_strjoin_int(char *str, char c)
 	r_str[i] = c;
 	r_str[++i] = '\0';
 	return (r_str);
-}
+}*/
 
 void	ft_terminal_run(t_term *term)
 {
 	t_arg	*elem;
-	char	buff[4096];
+	/*char	buff[4096];*/
 	int		key;
 
 	elem = term->arg_list->first;
@@ -44,16 +44,16 @@ void	ft_terminal_run(t_term *term)
 	ft_move_to(term, elem->position->x, elem->position->y);
 	while (42)
 	{
-		ft_write_search(term);
+		/*ft_write_search(term);*/
 		key = 0;
 		read(STDIN_FILENO, &key, 4);
-		if (ft_isalnum(key))
+		/*if (ft_isalnum(key))
 		{
 			ft_move_to(term, ft_strlen(FT_SEARCH), 0);
 			tputs(tgetstr(TC_CURSOR_DFL, NULL), 0, &ft_write_null);
 			ft_fprintf(0, "%s", ft_strjoin_int(buff, (char)key));
 		}
-		else if (term->status)
+		else*/ if (term->status)
 			ft_check_keys(term, key);
 		else if (key == FT_KEY_ESCAPE && !term->status)
 			ft_key_quit(term);

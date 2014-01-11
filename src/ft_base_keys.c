@@ -12,7 +12,7 @@
 
 #include "ft_select.h"
 
-void	ft_key_down(t_term *term)
+void	ft_key_right(t_term *term)
 {
 	t_arg	*list;
 	t_arg	*new;
@@ -24,7 +24,7 @@ void	ft_key_down(t_term *term)
 	if (list)
 	{
 		i = 0;
-		while (list->next && i++ < term->col)
+		while (list->next && i++ < term->row)
 			list = list->next;
 	}
 	else
@@ -36,7 +36,7 @@ void	ft_key_down(t_term *term)
 	ft_move_to(term, new->position->x, new->position->y);
 }
 
-void	ft_key_up(t_term *term)
+void	ft_key_left(t_term *term)
 {
 	t_arg	*list;
 	t_arg	*new;
@@ -48,7 +48,7 @@ void	ft_key_up(t_term *term)
 	if (list)
 	{
 		i = 0;
-		while (list->prev && i++ < term->col)
+		while (list->prev && i++ < term->row)
 			list = list->prev;
 	}
 	else
@@ -60,7 +60,7 @@ void	ft_key_up(t_term *term)
 	ft_move_to(term, new->position->x, new->position->y);
 }
 
-void	ft_key_left(t_term *term)
+void	ft_key_up(t_term *term)
 {
 	t_arg	*new;
 	t_arg	*old;
@@ -80,7 +80,7 @@ void	ft_key_left(t_term *term)
 	ft_move_to(term, new->position->x, new->position->y);
 }
 
-void	ft_key_right(t_term *term)
+void	ft_key_down(t_term *term)
 {
 	t_arg	*new;
 	t_arg	*old;
@@ -103,7 +103,7 @@ void	ft_key_space(t_term *term)
 	arg = term->cur_arg;
 	arg->selected = !arg->selected;
 	if (arg->selected)
-		ft_key_right(term);
+		ft_key_down(term);
 	else
 	{
 		ft_write_arg(term, arg);
