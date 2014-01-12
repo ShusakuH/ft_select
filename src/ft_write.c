@@ -6,7 +6,7 @@
 /*   By: greyrol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/02 20:28:01 by greyrol           #+#    #+#             */
-/*   Updated: 2014/01/05 11:28:36 by greyrol          ###   ########.fr       */
+/*   Updated: 2014/01/12 19:15:51 by greyrol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_write(t_term *term)
 	ft_write_clear();
 	ft_write_prepare(term);
 	display_area = term->arg_count - (term->col * term->max_rows);
-	if (display_area)
+	if (display_area > 0)
 		term->col++;
 	if ((term->col * term->cell_len - 1) <= term->max_cols)
 	{
